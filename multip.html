@@ -1,0 +1,68 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Inputs Form</title>
+  <style>
+    .input-container {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form id="inputForm">
+    <div class="input-container">
+      <label for="input1">Input 1:</label>
+      <input type="text" name="input1" id="input1" required>
+    </div>
+    <div id="additionalInputsContainer">
+    </div>
+    <button type="button" id="addInputButton" onclick="addInput()">+</button>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let inputCounter = 2;
+
+    function addInput() {
+      const container = document.getElementById('additionalInputsContainer');
+      const inputContainer = document.createElement('div');
+      inputContainer.classList.add('input-container');
+      inputContainer.innerHTML = `
+        <label for="input${inputCounter}">Input ${inputCounter}:</label>
+        <input type="text" name="input${inputCounter}" id="input${inputCounter}" required>
+      `;
+      container.appendChild(inputContainer);
+      inputCounter++;
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Inputs with Plus Sign</title>
+</head>
+<body>
+    <form id="inputForm">
+        <label for="inputValues">Enter values (separated by + sign):</label>
+        <input type="text" id="inputValues" name="inputValues">
+        <button type="button" onclick="processInputs()">Submit</button>
+    </form>
+
+    <script>
+        function processInputs() {
+            const inputValuesField = document.getElementById("inputValues");
+            const values = inputValuesField.value.split("+").map(value => value.trim());
+
+            // You can use 'values' array for further processing or display
+            console.log("Input values:", values);
+            
+            // If you want to extend the form, you can clear the input field for the next entry
+            inputValuesField.value = "";
+        }
+    </script>
+</body>
+</html>
+
