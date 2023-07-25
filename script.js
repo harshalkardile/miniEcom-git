@@ -27,35 +27,73 @@ const submitted = e => {
 
     }
 
+
+    function createCard(name, price, image) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+      
+        const img = document.createElement('img');
+        img.src = image;
+        card.appendChild(img);
+      
+        const nameElement = document.createElement('div');
+        nameElement.classList.add('name');
+        nameElement.textContent = name;
+        card.appendChild(nameElement);
+      
+        const priceElement = document.createElement('div');
+        priceElement.classList.add('price');
+        priceElement.textContent = `$${price}`;
+        card.appendChild(priceElement);
+      
+        return card;
+      }
     //To get the id from the div
     const output = document.querySelector("#card");
 
     //Asyncronus display funtion to render the data on webpage
     const dispData= async () => {
-        console.log(localStorage.getItem('Product'));
+
+        //To get the id from the div
+        const output = document.getElementById("card");
+
+        // console.log(localStorage.getItem('Product'));
         if(localStorage.getItem('Product')){
             
             // output.innerHTML= "";
-            let dataDisplay = JSON.parse(localStorage.getItem('Product')).map(data => {
-            const{ name, price, image } = data;
-            return `
-                    <img src="images/./$data.image">
-                    <h4>data.name</h4>
-                    <p>data.price</p>
-                    `
-            }).join("");
-            output.innerHTML=dataDisplay;     
+            // let dataDisplay = JSON.parse(localStorage.getItem('Product')).map(data => {
+            // const{ name, price, image } = data;
+            // console.log(data);
+            // return `
+            //         <img src="images/./$data.image">
+            //         <h4>data.name</h4>
+            //         <p>data.price</p>
+            //         `
+            // }).join("");
+            // output.innerHTML=dataDisplay;  
+            
+            
+            let dataDisplay = JSON.parse(localStorage.getItem('Product'))
+            dataDisplay.forEach(item => {
+                console.log(item);
+                const card = createCard(item.name, item.price, item.image);
+                output.appendChild(card);
+                // const h1 = document.createElement("h1")
+            // h1.innerHTML = element.name;
+            // output.appendChild(h1);
+                
+            });
         }
     }
 
 
-    // calling declared function
+    // calling declared function for diplaying the data
     dispData();
 
 
-    // {$data.image}{$data.price}{$data.name}
     
- // output.innerHTML += `
+            // {$data.image}{$data.price}{$data.name}
+            // output.innerHTML += `
             //     <div class="card"><img src="images/{$data.image}"><h4>{$data.name}</h4>
             //     <p>{$data.price}</p></div>
             // `;
