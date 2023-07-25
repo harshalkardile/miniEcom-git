@@ -45,18 +45,17 @@ const submitted = e => {
       
         const priceElement = document.createElement('div');
         priceElement.classList.add('price');
-        priceElement.textContent = `$${price}`;
+        priceElement.textContent = `₹ ${price}`;
         card.appendChild(priceElement);
 
-        const buttonElement = document.createElement('button');
-        buttonElement.classList.add('button');
+        const buttonElement = document.createElement('cart-button');
+        buttonElement.classList.add('cart-button');
         buttonElement.textContent= 'Add to cart'
         card.appendChild(buttonElement);
       
         return card;
       }
-    //To get the id from the div
-    // const output = document.querySelector("#card");
+    
 
     //Asyncronus display funtion to render the data on webpage
     const dispData= async () => {
@@ -91,7 +90,6 @@ const submitted = e => {
             });
         }
     }
-
 
     // calling declared function for diplaying the data
     dispData();
