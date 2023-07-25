@@ -1,3 +1,4 @@
+
 const submitted = e => {
     
     //To assign the data came from the textfields to the variables 
@@ -14,7 +15,7 @@ const submitted = e => {
         image: img
     })
 
-    
+    //Core storing     
     const jsonObject=JSON.stringify(Product);
     localStorage.setItem('Product', jsonObject);
     console.log(localStorage.getItem('Product'));
@@ -27,13 +28,14 @@ const submitted = e => {
 
     }
 
-
+    //To create card each time for new data rendering using DOM
     function createCard(name, price, image) {
         const card = document.createElement('div');
         card.classList.add('card');
       
         const img = document.createElement('img');
-        img.src = image;
+        
+        img.src = `./images/${image}`;
         card.appendChild(img);
       
         const nameElement = document.createElement('div');
@@ -45,17 +47,22 @@ const submitted = e => {
         priceElement.classList.add('price');
         priceElement.textContent = `$${price}`;
         card.appendChild(priceElement);
+
+        const buttonElement = document.createElement('button');
+        buttonElement.classList.add('button');
+        buttonElement.textContent= 'Add to cart'
+        card.appendChild(buttonElement);
       
         return card;
       }
     //To get the id from the div
-    const output = document.querySelector("#card");
+    // const output = document.querySelector("#card");
 
     //Asyncronus display funtion to render the data on webpage
     const dispData= async () => {
 
         //To get the id from the div
-        const output = document.getElementById("card");
+        const output = document.getElementById("card-container");
 
         // console.log(localStorage.getItem('Product'));
         if(localStorage.getItem('Product')){
@@ -79,9 +86,8 @@ const submitted = e => {
                 const card = createCard(item.name, item.price, item.image);
                 output.appendChild(card);
                 // const h1 = document.createElement("h1")
-            // h1.innerHTML = element.name;
-            // output.appendChild(h1);
-                
+                // h1.innerHTML = element.name;
+                // output.appendChild(h1);
             });
         }
     }
@@ -89,11 +95,3 @@ const submitted = e => {
 
     // calling declared function for diplaying the data
     dispData();
-
-
-    
-            // {$data.image}{$data.price}{$data.name}
-            // output.innerHTML += `
-            //     <div class="card"><img src="images/{$data.image}"><h4>{$data.name}</h4>
-            //     <p>{$data.price}</p></div>
-            // `;
