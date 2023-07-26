@@ -99,7 +99,6 @@
     function updateTotal(){
     // debugger
     const cartContainer = document.getElementById('cart-container');
-    
     cartContainer.innerHTML = '';
       cart.forEach(cartite => {
         const cartItem = createCartItem(cartite.name, cartite.price, cartite.image, cartite.quantity);
