@@ -86,3 +86,10 @@
 // // // const addToCartButton = document.getElementById('button');
 // // // addToCartButton.addEventListener('click', addToCart);
 
+// import cart from "./scriptp";
+
+// console.log(window.cart);
+
+
+const cart=require('./scriptp');
+console.log(cart);

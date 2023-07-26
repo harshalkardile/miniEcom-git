@@ -30,8 +30,6 @@
           });
         card.appendChild(buttonElement);
 
-        
-
                 return card;
             }
     
@@ -45,27 +43,14 @@
         // console.log(localStorage.getItem('Product'));
         if(localStorage.getItem('Product')){
             
-            // output.innerHTML= "";
-            // let dataDisplay = JSON.parse(localStorage.getItem('Product')).map(data => {
-            // const{ name, price, image } = data;
-            // console.log(data);
-            // return `
-            //         <img src="images/./$data.image">
-            //         <h4>data.name</h4>
-            //         <p>data.price</p>
-            //         `
-            // }).join("");
-            // output.innerHTML=dataDisplay;  
-            
+           
             
             let dataDisplay = JSON.parse(localStorage.getItem('Product'))
             dataDisplay.forEach(item => {
                 // console.log(item);
                 const card = createCard(item.name, item.price, item.image);
                 output.appendChild(card);
-                // const h1 = document.createElement("h1")
-                // h1.innerHTML = element.name;
-                // output.appendChild(h1);
+            
             });
         }
     }
@@ -74,54 +59,6 @@
     dispData();
 
 
-
-    // function createCart(name, price){
-
-    //     const cart = document.createElement('div');
-    //     cart.classList.add('card');
-
-    //     const quantityContainer = document.createElement('div');
-    //     quantityContainer.classList.add('quantity-container');
-
-    //     const minusButton = document.createElement('button');
-    //     minusButton.textContent = '-';
-    //     minusButton.addEventListener('click', function () {
-    //         const quantityInput = quantityContainer.querySelector('input');
-    //         const newQuantity = parseInt(quantityInput.value) - 1;
-    //         if (newQuantity >= 1) {
-    //         quantityInput.value = newQuantity;
-    //         updateQuantity(name, newQuantity);
-    //         }
-    //     });
-    //     quantityContainer.appendChild(minusButton);
-
-    //     const quantityInput = document.createElement('input');
-    //     quantityInput.type = 'number';
-    //     quantityInput.value = 1;
-    //     quantityInput.min = 1;
-    //     quantityInput.addEventListener('change', function () {
-    //         const newQuantity = parseInt(quantityInput.value, 10);
-    //         if (!isNaN(newQuantity) && newQuantity >= 1) {
-    //         updateQuantity(name, newQuantity);
-    //         } else {
-    //         quantityInput.value = 1;
-    //         updateQuantity(name, 1);
-    //         }
-    //     });
-    //     quantityContainer.appendChild(quantityInput);
-
-    //     const plusButton = document.createElement('button');
-    //     plusButton.textContent = '+';
-    //     plusButton.addEventListener('click', function () {
-    //         const quantityInput = quantityContainer.querySelector('input');
-    //         const newQuantity = parseInt(quantityInput.value) + 1;
-    //         quantityInput.value = newQuantity;
-    //         updateQuantity(name, newQuantity);
-    //     });
-    //     quantityContainer.appendChild(plusButton);
-
-    //     cart.appendChild(quantityContainer);
-    // }
     
     let cart = [];
 
@@ -151,15 +88,8 @@
         
         updateTotal();
         // alert('Item added to cart!');
-        // console.log(cartit); // Optional: Display the cart items in the console
+        console.log(cartit); 
       }
-      
-      
-      // Function to create a card element (Same as before)
-      
-      // Function to display the cards in the container (Same as before)
-      
-      // Function to calculate the total price of cart items
       
       function calculateTotal() {
         let total = 0;
@@ -167,22 +97,13 @@
         cart.forEach(cartit => {
             // console.log(cartit); 
           total += cartit.price * cartit.quantity;
-        //   console.log(total);
+        
         });
+        console.log(total);
         return total;
-        // Optional: Display the cart items in the console
       }
       
-
-      
-      // Function to update the total price display
-    //   function updateTotal() {
-    //     const tt = document.createElement('div');
-    //     const totalElement = document.createElement('div');
-    //     totalElement.textContent = `Total: $${calculateTotal()}`;
-    //     tt.appendChild(totalElement);
-    //   }
-
+      //To update total in fixed object
       function updateTotal(){
 
       const totalElement = document.getElementById('price');
@@ -193,30 +114,7 @@
       // Example usage to display the total price
       updateTotal();
 
-////////////////////////////////////////////////////////////////
-
-    // function addToCart(cartitem) {
-   
-    //     cart.push(cartitem);
-    //     alert('Item added to cart!');
-    //     console.log(cartitem); 
-    //     // }
-    // }
-    // function calculateTotal() {
-    //     let total = 0;
+// console.log(cart);
+module.exports= cart;
     
-    //     cart.forEach(item => {
-    //     //   total += item.price;
-    //     //   console.log(item);
-    //     });
-    //     return total;
-    //   }
-
-    //   const totalElement = document.createElement('div');
-    //     totalElement.textContent = `Total: ${calculateTotal()}`;
-    //     document.getElementById('card-container').appendChild(totalElement);
-    
-    // // const addToCartButton = document.getElementById('button');
-    // // addToCartButton.addEventListener('click', addToCart);
-
     
