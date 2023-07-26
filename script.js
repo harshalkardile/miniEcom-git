@@ -1,5 +1,3 @@
-
-
 const submitted = e => {
     
     //To assign the data came from the textfields to the variables 

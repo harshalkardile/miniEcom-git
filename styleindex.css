@@ -114,3 +114,91 @@
 .cart-button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+
+/* Style for the cart container */
+#price{
+  text-align: center;
+  font-weight: 800;
+}
+
+#cart-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Style for each cart item */
+.cart-item {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.cart-item img {
+  padding-left: 20px;
+  max-width: 100px;
+  max-height: 100px;
+  margin-right: 10px;
+}
+
+.cart-item .name {
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 100px;
+}
+
+.cart-item .price {
+  font-size: 16px;
+  color: green;
+  padding-left: 100px;
+}
+
+.cart-item .quantity {
+  width: 50px;
+  padding-left: 10px;
+  margin-left: 100px;
+  margin-right: 10px;
+}
+
+/* Basic button styles */
+.checkout-button {
+  display: inline-block;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  margin-top: 9px;
+  background-color: #157ae7; /* Replace with your desired color */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.checkout-button:hover {
+  background-color: #637282; /* Replace with a slightly different shade of your desired color */
+}
+
+/* Button active effect */
+.checkout-button:active {
+  background-color: #000000; /* Replace with a darker shade of your desired color */
+}
+
+/* Button disabled effect */
+.checkout-button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Optional: Add box-shadow for a 3D effect */
+.checkout-button {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
