@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh; /* Adjust the height to your preference */
+    height: 85vh; 
   }
 
   h3{
@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 85vh; Adjust the height to your preference */
+    
   }
 
 .started {

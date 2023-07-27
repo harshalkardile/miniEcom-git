@@ -26,12 +26,6 @@
     justify-content: center;
     align-items: center;
   }
-    
-  /* .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  } */
 
   .column {
     float: left;
@@ -45,7 +39,7 @@
     justify-content: space-between;
   }
   
-  /* Style for the card */
+  
   .card {
     width: 250px;
     border: 1px solid #ccc;
@@ -71,7 +65,7 @@
 
    .card {
     padding-top: 80px;
-    box-shadow: 0 4px 8px 0 rgba(224, 195, 195, 0.2); /* this adds the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(224, 195, 195, 0.2); 
     padding: 16px;
     text-align: center;
     border-radius: 10px;
@@ -89,34 +83,34 @@
   font-weight: 50px;
   text-align: center;
   color: #fff;
-  background-color: #007bff; /* Replace with your desired color */
+  background-color: #007bff; 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
+
 .cart-button:hover {
-  background-color: #0056b3; /* Replace with a slightly different shade of your desired color */
+  background-color: #0056b3; 
 }
 
-/* Button active effect */
+
 .cart-button:active {
-  background-color: #003a80; /* Replace with a darker shade of your desired color */
+  background-color: #003a80; 
 }
 
-/* Button disabled effect */
+
 .cart-button[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Optional: Add box-shadow for a 3D effect */
+
 .cart-button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
-/* Style for the cart container */
+
 #price{
   text-align: center;
   font-weight: 800;
@@ -129,7 +123,7 @@
   align-items: flex-start;
 }
 
-/* Style for each cart item */
+
 .cart-item {
   display: flex;
   align-self: center;
@@ -166,7 +160,7 @@
   margin-right: 10px;
 }
 
-/* Basic button styles */
+
 .checkout-button {
   display: inline-block;
   padding: 12px 20px;
@@ -177,28 +171,28 @@
   text-align: center;
   color: #fff;
   margin-top: 9px;
-  background-color: #157ae7; /* Replace with your desired color */
+  background-color: #157ae7; 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
+
 .checkout-button:hover {
-  background-color: #637282; /* Replace with a slightly different shade of your desired color */
+  background-color: #637282; 
 }
 
-/* Button active effect */
+
 .checkout-button:active {
-  background-color: #000000; /* Replace with a darker shade of your desired color */
+  background-color: #000000; 
 }
 
-/* Button disabled effect */
+
 .checkout-button[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Optional: Add box-shadow for a 3D effect */
+
 .checkout-button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
