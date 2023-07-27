@@ -1,7 +1,4 @@
-//   import { addToCart } from "./cart";
-  
-  
-  //To create card each time for new data rendering using DOM
+    //To create card each time for new data rendering using DOM
     function createCard(name, price, image) {
         
       const card = document.createElement('div');
@@ -43,13 +40,11 @@
       //To get the id from the div
       const output = document.getElementById("card-container");
 
-      // console.log(localStorage.getItem('Product'));
       if(localStorage.getItem('Product')){
-          
-        
+              
       let dataDisplay = JSON.parse(localStorage.getItem('Product'))
           dataDisplay.forEach(item => {
-              // console.log(item);
+              
               const card = createCard(item.name, item.price, item.image);
               output.appendChild(card);
           
@@ -59,12 +54,14 @@
     // calling declared function for diplaying the data
     dispData();
 
+    //initializing global cart Array
     let cart = [];
 
+    //To the product to cart and initialize the quatity of the product
     function addToCart(cartit) {
       // Check if the item already exists in the cart
       const existingItem = cart.find(cartItem => cartItem.name === cartit.name);
-      // debugger
+      
       if (existingItem) {
         // If the item already exists, increment the quantity
         existingItem.quantity++;
@@ -74,30 +71,24 @@
         cart.push(cartit);
        
       }
-      
       updateTotal();
-      // alert('Item added to cart!');
       
     }
       
+    // To calculate total of cart items
     function calculateTotal() {
       let total = 0;
           
       cart.forEach(cartit => {
-          // console.log(cartit); 
         total += cartit.price * cartit.quantity;
-      
       });
 
-      // console.log(total);
       return total;
     }
 
-      // console.log(cart);
-      
-      //To update total in fixed object
+    //To update total in fixed object and render the cart item
     function updateTotal(){
-    // debugger
+    
     const cartContainer = document.getElementById('cart-container');
     cartContainer.innerHTML = '';
       cart.forEach(cartite => {
@@ -106,12 +97,12 @@
         
       })
 
-        
     const totalElement = document.getElementById('price');
       totalElement.textContent = `Total: ₹${calculateTotal()}`;
         
     }
 
+    // calling updateQuantity function on increasing and decreasing quantity of cart items from cartItem function
     function updateQuantity(itemName, newQuantity) {
       const item = cart.find(cartItem => cartItem.name === itemName);
       if (item) {
@@ -120,6 +111,7 @@
       updateTotal();
     }
 
+    // creating cartItem to display each items added to the cart 
     function createCartItem(name, price, image, quantity) {
 
       const existingItem = cart.find(cartItem => cartItem.name === name);
@@ -161,10 +153,8 @@
       return cartItem;
     }
 
-          
-      updateTotal();
-     
       
+    //calling displayMessage from Purchase function
     function displayMessage(message, duration) {
       return new Promise(resolve => {
         // Display the message
@@ -177,6 +167,7 @@
       });
     }
     
+    //calling purchase from UI checkout button
     async function purchase() {
       try {
         await displayMessage('Successful purchase', 3000); 
