@@ -4,33 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="styleindex.css" />
+    <link rel="stylesheet" href="index.css" />
 </head>
 <body>
     
     <div class="page2">
         <h2 class="h2">Products</u></h2>
         <hr><br>
-        <center>
+       
             <div class="row">
-            <div class="column" id="col">
-                <div class="card" id="card">
+        
+                    <div id="card-container"> 
+            
+                    </div>          
+            </div>
+    </div>
+    <div class="page3">
+        <h2 class="h2">Cart</u></h2>
+        <hr><br>
+        
+            <div class="row">
+        
+                    <div id="cart-container">
 
+                    </div>
+                          
                 </div>
-            </div>
-        </div> 
-        </center>
-       </div>
-       <!-- <center>
-            <div class="row">
-            <div class="column">
-                <div class="card"><img src="images/Group-1549icons.svg"><h4>Choose a Template</h4>
-                <p>Pick from over 100 pre-built websites or<br> page templates and import any one of<br> them with a single click.</p></div>
-            </div>
-            </div> 
-        </center>-->
-        <!-- </div> -->
+                
+            <div id="price"></div>
+            <center><button class="checkout-button" onclick="purchase()"> Checkout </button></center>
+    </div>
 
-    <script src="./script.js"></script>
+    <script src="./product-cart.js"></script>
 </body>
 </html>

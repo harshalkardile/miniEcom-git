@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
 
-    <link rel="stylesheet" href="styleadmin.css" />
+    <link rel="stylesheet" href="admin.css" />
 </head>
+<script></script>
 <body>
     <H1>Admin Page</H1>
-    <form id="dataForm" class="add" onsubmit="submitted()"> 
+    <hr>
+    <div class="form-container">
+    
+    <form id="dataForm"  onsubmit="submitted()"> 
+        <H3><U>Add Products</U></H3>
         <div class="ct">
         <div class="pname">Name</div>
         <input type="text" name="name" id="name" class="name"><br>
@@ -18,13 +23,11 @@
         <div class="pname">Image URL.</div>
         <input type="text" name="img" id="img" class="name"><br>
         <br>
-        <!-- <button type="button" onclick="addInput()">+</button> -->
         <input type="submit" class="started"></button>
         <button type="reset" class="started">Reset</button>
+        </div>
+    </form>
     </div>
-
-</form>
-<script src="./script.js"></script>
+<script src="./admin.js"></script>
 </body>
-    <!-- <script src="script.js"></script> -->
 </html>
